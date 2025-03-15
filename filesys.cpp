@@ -146,9 +146,10 @@ int Filesys::delBlock(string file, int blocknumber){
 //an error code of 1 if successful and 0 otherwise.
 int Filesys::readBlock(string file, int blocknumber, string& buffer){
 	if (checkFileBlock(file, blocknumber)){
-		getBlock(/*file, */blocknumber, buffer);
+		getBlock(blocknumber, buffer);
 		return 1;
 	} else {//Didn't work. Blocknumber did not belong to file.
+		cout << "Error! Blocknumber does not belong to file!" << endl;
 		return 0;
 	}
 }
