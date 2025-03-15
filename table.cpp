@@ -86,7 +86,7 @@ int Table::indexSearch(string key)
 	string tempkey;
 	int date;
 	instream >> tempkey >> date;	//Read first index record.
-	while (key != "Kangaroo")
+	while (tempkey != "Kangaroo")
 	{
 		if (tempkey == key)
 		{
@@ -94,5 +94,6 @@ int Table::indexSearch(string key)
 		}
 		instream >> tempkey >> date;
 	}
+	cout << "Error: " << key << " was not found!" << endl;
 	return -1;		//Was 0.
 }
